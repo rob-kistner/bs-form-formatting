@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Boostrap Form Formatting</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.2/css/all.css">
+</head>
+<body>
+
+<main class="container mt-5">
+  <h2>Concord Theme Forms</h2>
+  <a href="https://d29u17ylf1ylz9.cloudfront.net/concord/contact-us.html" target="_new">
+    <p>View the inspiration page</p>
+  </a>
+
+  <form class="mt-5">
+
+     <div class="form-row">
+       <div class="form-group col">
+         <label for="firstname">First Name</label>
+         <input type="text" name="firstname" id="firstname" class="form-control" value="Rob">
+       </div>
+       <div class="form-group col">
+         <label for="lastname">Last Name</label>
+         <input type="text" name="lastname" id="lastname" class="form-control" value="Kistner">
+       </div>
+     </div>
+     <div class="form-row">
+       <div class="form-group col">
+         <label for="email">Email</label>
+         <input type="email" name="email" id="email" class="form-control" value="rob.kistner@vomela.com">
+       </div>
+       <div class="form-group col">
+         <label for="phone">Phone</label>
+         <input type="text" name="phone" id="phone" class="form-control" value="(630) 308-0834">
+       </div>
+     </div>
+    <div class="form-group">
+       <label for="title">Title</label>
+       <span class="select-icon"></span>
+       <select class="form-control" name="title" id="title">
+         <option value="Art Director" selected>Art Director</option>
+         <option value="Graphic Designer">Graphic Designer</option>
+         <option value="Photographer">Photographer</option>
+       </select>
+     </div>
+     <div class="form-group">
+       <label for="description">Description</label>
+       <textarea class="form-control" name="description" id="description" rows="5">The rows property specifies the height of the textarea based on the number of visible lines of text. If there's more text than this allows, users can scroll using the textarea's scrollbars. Readonly sets the input control to read-only. It won't allow the user to change the value.</textarea>
+     </div>
+     
+     <div class="form-group-buttons">
+       <button type="submit" class="btn btn-primary">Submit</button>
+       <button type="reset" class="btn btn-light">Reset</button>
+     </div>
+
+  </form>
+</main>
+
+</body>
+</html>

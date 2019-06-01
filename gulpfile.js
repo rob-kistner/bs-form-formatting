@@ -1,5 +1,7 @@
 const { src, dest, watch, parallel, series } = require('gulp')
 const sass = require('gulp-sass')
+const purgecss = require('gulp-purgecss')
+const rename = require('gulp-rename')
 const browserSync = require('browser-sync').create()
 
 const
@@ -24,6 +26,22 @@ function scss() {
     .pipe(browserSync.stream())
 }
 
+function purge() {
+  return src(scss_src)
+    .pipe(sass({
+        outputStyle: 'compressed'
+      }))
+      .on("error", sass.logError)
+    .pipe(rename({
+      suffix: '-purged'
+    }))
+    .pipe(purgecss({
+      content: [html_dest + '*.html']
+    }))
+    .pipe(dest(scss_dest))
+    .pipe(browserSync.stream())
+}
+
 
 function watchers() {
   
@@ -44,6 +62,7 @@ function watchers() {
 
 exports.html       = html
 exports.scss       = scss
+exports.purge      = purge
 exports.watchers   = watchers
 
-exports.default = series(parallel(scss, html), watchers)
+exports.default = series(parallel(html, scss), watchers)

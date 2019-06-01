@@ -26,7 +26,7 @@ function scss() {
     .pipe(browserSync.stream())
 }
 
-function purge() {
+function purge() { 
   return src(scss_src)
     .pipe(sass({
         outputStyle: 'compressed'
